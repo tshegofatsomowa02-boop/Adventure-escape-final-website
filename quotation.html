@@ -43,63 +43,84 @@
     Customer Quotation
   </h2>
 
-          <form action="#" method="post">
+          <form id="quotationForm" novalidate>
+              <div id="quotationStatus" class="form-status" aria-live="polite"></div>
+
               <label for="name"> Customer Name: </label>
-             <input type="text" id="name" name="name" required>
-              <br>
+             <input type="text" id="name" name="name">
+             <div class="field-error" data-error-for="name"></div>
               <br>
 
               <label for="category"> Booking Category: </label>
 
-             <select id="category" name="category" required>
-            <option value=""></option>
-            <option value="Hiking">Individual Booking</option>
-            <option value="Kayaking">Group Booking</option>
-             </select>              
+             <select id="category" name="category">
+            <option value="">Choose booking type</option>
+            <option value="individual">Individual Booking</option>
+            <option value="group">Group Booking</option>
+             </select>
+             <div class="field-error" data-error-for="category"></div>
              <br>
-              <br>
 
             <label for="number"> Number Of People: </label>
-              <input type="number" id="number" name="number" required>
+              <input type="number" id="number" name="number" min="1">
+              <div class="field-error" data-error-for="number"></div>
               <br>
-              <br> 
+
+         <div id="individualQuoteOption" class="booking-option hidden">
          <label for="individual"> Individual Escape SA Packages: </label>
 
         <select id="individual" name="individual">
-            <option value=""></option>
-            <option value="Hiking">Ziplining Adventure</option>
-            <option value="Kayaking">Kayaking Experience</option>
-            <option value="Ziplining">Rock Climbing Session</option>
+            <option value="">Select individual package</option>
+            <option value="Ziplining Adventure">Ziplining Adventure</option>
+            <option value="Kayaking Experience">Kayaking Experience</option>
+            <option value="Rock Climbing Session">Rock Climbing Session</option>
             </select>
-            <br>
+            <div class="field-error" data-error-for="individual"></div>
+        </div>
             <br>
 
+        <div id="groupQuoteOption" class="booking-option hidden">
             <label for="group"> Group Escape SA Packages: </label>
 
         <select id="group" name="group">
-            <option value=""></option>
-            <option value="Rock Climbing">Ultimate Adventure Day</option>
-            <option value="Mountain Climbing">Family Explore Package</option>
-            <option value="Mountain Climbing">Corporate Team Challenge</option>
-            <option value="Mountain Climbing">Rock scrambling </option>
-              <option value="Mountain Climbing">Mountain Adventure Package</option>
-        </select>    
-        <br>
-        <br>     
-
-        <label for="price"> Escape SA Package Price: R </label>
-
-          <select id="price" name="price" required>
-            <option value=""></option>
-            <option value="Hiking">Individual Price: R750</option>
-            <option value="Kayaking">Group Price: R1500</option>
+            <option value="">Select group package</option>
+            <option value="Ultimate Adventure Day">Ultimate Adventure Day</option>
+            <option value="Family Explore Package">Family Explore Package</option>
+            <option value="Corporate Team Challenge">Corporate Team Challenge</option>
+            <option value="Rock scrambling">Rock scrambling</option>
+            <option value="Mountain Adventure Package">Mountain Adventure Package</option>
         </select>
+        <div class="field-error" data-error-for="group"></div>
+        </div>
+        <br>
+
+        <label for="price"> Escape SA Package Base Price: R </label>
+
+          <select id="price" name="price">
+            <option value="">Select a base price</option>
+            <option value="750">Individual Price: R750</option>
+            <option value="1500">Group Price: R1500</option>
+        </select>
+        <div class="field-error" data-error-for="price"></div>
 
               <br>
              <br>
               <button type="submit" alt="button used to submit quotation" height="105px" width="195px" >Calculate</button>
 
                </form>
+
+               <div id="quotationResult" class="quotation-result" aria-live="polite">
+                  <h3>Final Price Summary</h3>
+                  <p><strong>Booking Type:</strong> <span id="bookingTypeResult">Not selected</span></p>
+                  <p><strong>Package:</strong> <span id="packageResult">Not selected</span></p>
+                  <p><strong>People:</strong> <span id="peopleResult">0</span></p>
+                  <p><strong>Base Total:</strong> R<span id="basePriceResult">0.00</span></p>
+                  <p><strong>Group Discount:</strong> -R<span id="groupDiscountResult">0.00</span></p>
+                  <p><strong>Early Bird Discount:</strong> -R<span id="earlyBirdDiscountResult">0.00</span></p>
+                  <p><strong>Seasonal Discount:</strong> -R<span id="seasonalDiscountResult">0.00</span></p>
+                  <p><strong>Total Discounts:</strong> -R<span id="totalDiscountResult">0.00</span></p>
+                  <p><strong>Final Price including discounts:</strong> <span id="finalPriceResult">R0.00</span></p>
+               </div>
                <br>
        
        

@@ -42,64 +42,70 @@
 
         <h2> Booking Form</h2>
 
-        <form action="#" method="post">
+        <form id="bookingForm" action="#" method="post" novalidate>
+              <div id="bookingFormStatus" class="form-status" aria-live="polite"></div>
+
               <label for="name"> Customer Name: </label>
              <input type="text" id="name" name="name" required>
-              <br>
+             <div class="field-error" data-error-for="name"></div>
               <br>
 
               <label for="surname"> Customer Surname: </label>
              <input type="text" id="surname" name="surname" required>
-              <br>
+             <div class="field-error" data-error-for="surname"></div>
               <br>
 
               <label for="phone"> Phone Number: </label>
                <input type="tel" id="phone" name="phone" required>
+               <div class="field-error" data-error-for="phone"></div>
               <br>
-               <br>
 
               <label for="email"> Email Address: </label>
                <input type="email" id="email" name="email" required>
+               <div class="field-error" data-error-for="email"></div>
              <br>
-              <br>
 
               <label for="category"> Booking Category: </label>
 
           <select id="category" name="category" required>
-            <option value=""></option>
-            <option value="Hiking">Individual Booking</option>
-            <option value="Kayaking">Group Booking</option>
-        </select>              
-        <br>
+            <option value="">Choose a booking category</option>
+            <option value="individual">Individual Booking</option>
+            <option value="group">Group Booking</option>
+        </select>
+        <div class="field-error" data-error-for="category"></div>
         <br>
 
               <label for="number"> Number Of People: </label>
-              <input type="number" id="number" name="number" required>
-              <br>
+              <input type="number" id="number" name="number" min="1" required>
+              <div class="field-error" data-error-for="number"></div>
               <br>
 
-        <label for="individual"> Individual Escape SA Packages: </label>
+        <div id="individualOption" class="booking-option hidden">
+            <label for="individual"> Individual Escape SA Packages: </label>
 
-        <select id="individual" name="individual">
-            <option value=""></option>
-            <option value="Hiking">Ziplining Adventure</option>
-            <option value="Kayaking">Kayaking Experience</option>
-            <option value="Ziplining">Rock Climbing Session</option>
+            <select id="individual" name="individual">
+                <option value="">Select an individual package</option>
+                <option value="Ziplining Adventure">Ziplining Adventure</option>
+                <option value="Kayaking Experience">Kayaking Experience</option>
+                <option value="Rock Climbing Session">Rock Climbing Session</option>
             </select>
-            <br>
-            <br>
+            <div class="field-error" data-error-for="individual"></div>
+        </div>
+        <br>
 
+        <div id="groupOption" class="booking-option hidden">
             <label for="group"> Group Escape SA Packages: </label>
 
-        <select id="group" name="group">
-            <option value=""></option>
-            <option value="Rock Climbing">Ultimate Adventure Day</option>
-            <option value="Mountain Climbing">Family Explore Package</option>
-            <option value="Mountain Climbing">Corporate Team Challenge</option>
-            <option value="Mountain Climbing">Rock scrambling </option>
-              <option value="Mountain Climbing">Mountain Adventure Package</option>
-        </select>    
-        <br>
+            <select id="group" name="group">
+                <option value="">Select a group package</option>
+                <option value="Ultimate Adventure Day">Ultimate Adventure Day</option>
+                <option value="Family Explore Package">Family Explore Package</option>
+                <option value="Corporate Team Challenge">Corporate Team Challenge</option>
+                <option value="Rock scrambling">Rock scrambling</option>
+                <option value="Mountain Adventure Package">Mountain Adventure Package</option>
+            </select>
+            <div class="field-error" data-error-for="group"></div>
+        </div>
         <br>
         
          <label for="date"> Booking Date: </label>
@@ -108,18 +114,18 @@
              id="bookingDate"
              name="bookingDate"
              min="2026-10-20"
-              required
             >
-              <br>
+            <div class="field-error" data-error-for="bookingDate"></div>
               <br>
 
             <label for="price"> Escape SA Package Price: R </label>
 
           <select id="price" name="price" required>
-            <option value=""></option>
-            <option value="Hiking">Individual Price: R750</option>
-            <option value="Kayaking">Group Price: R1500</option>
+            <option value="">Select a price</option>
+            <option value="750">Individual Price: R750</option>
+            <option value="1500">Group Price: R1500</option>
         </select>
+        <div class="field-error" data-error-for="price"></div>
 
               <br>
              <br>

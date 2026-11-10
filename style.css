@@ -154,6 +154,30 @@ form {
     box-shadow: 0 5px 18px rgba(25, 55, 35, 0.08);
 }
 
+.quotation-result {
+    width: 90%;
+    max-width: 650px;
+    margin: 25px auto 30px;
+    padding: 22px 24px;
+    background: #f9fbf9;
+    border: 1px solid #d4e3d6;
+    border-radius: 10px;
+    box-shadow: 0 5px 18px rgba(25, 55, 35, 0.06);
+}
+
+.quotation-result.hidden {
+    display: none;
+}
+
+.quotation-result h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.quotation-result p {
+    margin: 8px 0;
+}
+
 .form-status {
     display: none;
     margin-bottom: 18px;
@@ -196,6 +220,10 @@ select.valid,
 textarea.valid {
     border-color: #2e7d32;
     background: #f7fff8;
+}
+
+.booking-option.hidden {
+    display: none;
 }
 
 label {
