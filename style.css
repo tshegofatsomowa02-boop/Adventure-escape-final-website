@@ -154,6 +154,50 @@ form {
     box-shadow: 0 5px 18px rgba(25, 55, 35, 0.08);
 }
 
+.form-status {
+    display: none;
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.form-status.error {
+    display: block;
+    background: #fde9e9;
+    color: #9d1d1d;
+    border: 1px solid #e7b6b6;
+}
+
+.form-status.success {
+    display: block;
+    background: #eaf8ee;
+    color: #1d5e35;
+    border: 1px solid #afd7ba;
+}
+
+.field-error {
+    min-height: 18px;
+    margin: -8px 0 12px;
+    color: #c62828;
+    font-size: 13px;
+}
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+    border-color: #d32f2f;
+    background: #fff7f7;
+    box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.08);
+}
+
+input.valid,
+select.valid,
+textarea.valid {
+    border-color: #2e7d32;
+    background: #f7fff8;
+}
+
 label {
     display: inline-block;
     margin: 8px 0;
